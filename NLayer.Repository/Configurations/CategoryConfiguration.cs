@@ -16,7 +16,7 @@ namespace NLayer.Repository.Configurations
             builder.HasKey(x => x.ID); //id bir key olacak
             builder.Property(x => x.ID).UseIdentityColumn(); //aynı zamanda birer birer artcak.default olarak bıraktım birer birer artsın
             builder.Property(x => x.Name).IsRequired().HasMaxLength(50);//nullable olmasın ve max 50 char olsun
-            builder.ToTable("Categories") //tablo adı verilebilir. Eğer bunu vermezsek default olarak appdbcontextte yer alan adını alır.
+            builder.ToTable("Categories"); //tablo adı verilebilir. Eğer bunu vermezsek default olarak appdbcontextte yer alan adını alır.
 
 
         }
