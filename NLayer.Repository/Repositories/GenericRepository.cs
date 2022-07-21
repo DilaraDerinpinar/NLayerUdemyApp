@@ -25,7 +25,7 @@ namespace NLayer.Repository.Repositories
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            await _dbSet.AddRangeAsync(entities);
+             await _dbSet.AddRangeAsync(entities);
         }
 
         public async Task<bool> AnyAsync(System.Linq.Expressions.Expression<Func<T, bool>> expression)
@@ -33,7 +33,7 @@ namespace NLayer.Repository.Repositories
            return await _dbSet.AnyAsync(expression);
         }
 
-        public IQueryable<T> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             return _dbSet.AsNoTracking().AsQueryable(); //ef core çektiği dataları direkt memory ye almasın diye as no tracking metodunu kullandık performans açısından.
         }
